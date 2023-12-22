@@ -34,20 +34,14 @@ router.get('/basicTransaction', async (req, res) => {
     }
     if (search) {
         let priceSearch = Number(search);
-        if (isNaN(priceSearch)) { // if search is not a number
-          filter.$or = [
+        filter.$or = [
             { title: new RegExp(search, 'i') },
             { description: new RegExp(search, 'i') }
-          ];
-        } else { // if search is a number
-          filter.$or = [
-            { title: new RegExp(search, 'i') },
-            { description: new RegExp(search, 'i') },
-            { price: priceSearch }
-          ];
+        ];
+        if (!isNaN(priceSearch)) { // if search can be converted to a number
+            filter.$or.push({ price: priceSearch });
         }
-      }
-      
+    }
 
     const transactions = await collection.find(filter)
       .skip((page - 1) * perPage)
