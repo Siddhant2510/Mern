@@ -1,0 +1,21 @@
+.stat-card {
+    background-color: #fcf3cf;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-card p {
+    background-color: #fdf9e8;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  

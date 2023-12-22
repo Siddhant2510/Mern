@@ -1,0 +1,49 @@
+.dashboard {
+    background-color: #add8e6;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .title-section {
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .title-section h1 {
+    text-align: center;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .filters select,
+  .filters input {
+    width: 45%;
+    background-color: #FFDAB9; 
+    border: none;
+    padding: 10px;
+    border-radius: 5px; 
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFDAB9;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: left;
+  }
+  

@@ -33,12 +33,21 @@ router.get('/basicTransaction', async (req, res) => {
         filter.dateOfSale = new RegExp(`^\\d{4}-${monthNumber}`, 'i');
     }
     if (search) {
-      filter.$or = [
-        { title: new RegExp(search, 'i') },
-        { description: new RegExp(search, 'i') },
-        { price: new RegExp(search, 'i') }
-      ];
-    }
+        let priceSearch = Number(search);
+        if (isNaN(priceSearch)) { // if search is not a number
+          filter.$or = [
+            { title: new RegExp(search, 'i') },
+            { description: new RegExp(search, 'i') }
+          ];
+        } else { // if search is a number
+          filter.$or = [
+            { title: new RegExp(search, 'i') },
+            { description: new RegExp(search, 'i') },
+            { price: priceSearch }
+          ];
+        }
+      }
+      
 
     const transactions = await collection.find(filter)
       .skip((page - 1) * perPage)
