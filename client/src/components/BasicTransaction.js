@@ -71,7 +71,7 @@ function BasicTransaction() {
               <td>{transaction.description}</td>
               <td>{transaction.price}</td>
               <td>{transaction.category}</td>
-              <td>{transaction.sold}</td>
+              <td>{transaction.sold.toString()}</td>
               <td>{transaction.image}</td>
             </tr>
           ))}
